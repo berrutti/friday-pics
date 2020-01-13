@@ -13,9 +13,9 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="All dumps" />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.title
           return (
             <article key={node.fields.slug}>
               <header>
@@ -31,11 +31,7 @@ class BlogIndex extends React.Component {
                 <small>{node.frontmatter.date}</small>
               </header>
               <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
+                <img src={node.frontmatter.image}></img>
               </section>
             </article>
           )
@@ -57,13 +53,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            image
           }
         }
       }
