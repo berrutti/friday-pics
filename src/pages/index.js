@@ -31,7 +31,7 @@ class BlogIndex extends React.Component {
                 <small>{node.frontmatter.date}</small>
               </header>
               <section>
-                <img src={node.frontmatter.image}></img>
+                <img src={node.frontmatter.image} alt={node.frontmatter.title}></img>
               </section>
             </article>
           )
