@@ -5,49 +5,36 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
+const postTitleStyle = {
+  marginTop: rhythm(1),
+  marginBottom: 0,
+};
+
+const ulStyle = {
+  display: `flex`,
+  flexWrap: `wrap`,
+  justifyContent: `space-between`,
+  listStyle: `none`,
+  padding: 0,
+};
+
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const post = this.props.data.markdownRemark;
+    const title = post.frontmatter.title;
+    const menuLinks = this.props.data.site.siteMetadata.menuLinks;
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-        />
+      <Layout location={this.props.location} siteTitle={title} menuLinks={menuLinks}>
+        <SEO title={title} />
         <article>
-          <header>
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
-          </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-          <footer>
-            
-          </footer>
+          <hr style={{ marginBottom: rhythm(1)}}/>
         </article>
 
         <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
+          <ul style={ulStyle}>
             <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
@@ -76,6 +63,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        menuLinks {
+          name
+          link
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -88,4 +79,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
