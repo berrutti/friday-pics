@@ -37,7 +37,7 @@ class About extends React.Component {
             <a href='https://www.reddit.com/r/memes'>memes</a><br />
           </p>
           <p>Original posters (OPs) are credited on top of the images with a link to the post. The post title is provided as the image title and alternate text.
-            If you are the creator of one of these images and want it removed, please contact me, and I'll gladly take it down.
+            If you are the creator of one of these images and want it removed, please <a href='mailto:berrutti@gmail.com'>contact me</a>, and I'll gladly take it down.
           </p>
           <p>Thanks and have fun!</p>
         </section>
