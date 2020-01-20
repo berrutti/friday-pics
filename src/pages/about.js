@@ -39,6 +39,9 @@ class About extends React.Component {
           <p>Original posters (OPs) are credited on top of the images with a link to the post. The post title is provided as the image title and alternate text.
             If you are the creator of one of these images and want it removed, please <a href='mailto:berrutti@gmail.com'>contact me</a>, and I'll gladly take it down.
           </p>
+          <p>
+            If you want to take a look at the scrapper, you can do so on this repository: <a href='https://github.com/berrutti/friday-pics-bot'>https://github.com/berrutti/friday-pics-bot</a>.
+          </p>
           <p>Thanks and have fun!</p>
         </section>
       </Layout>

@@ -5,11 +5,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const postTitleStyle = {
-  marginTop: rhythm(1),
-  marginBottom: 0,
-};
-
 const ulStyle = {
   display: `flex`,
   flexWrap: `wrap`,
