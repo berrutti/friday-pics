@@ -22,7 +22,7 @@ class BlogIndex extends React.Component {
                 {title}
               </Link>
               <section>
-                <img src={node.frontmatter.image} alt={node.frontmatter.title}></img>
+                <img className="post-img" src={node.frontmatter.image} alt={node.frontmatter.title}></img>
               </section>
             </article>
           )
