@@ -17,12 +17,13 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     const title = post.frontmatter.title;
+    const image = post.frontmatter.image;
     const menuLinks = this.props.data.site.siteMetadata.menuLinks;
     const { previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} siteTitle={title} menuLinks={menuLinks}>
-        <SEO title={title} />
+        <SEO title={title} image={image}/>
         <article>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr style={{ marginBottom: rhythm(1)}}/>
