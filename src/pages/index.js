@@ -17,14 +17,15 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title;
           return (
-            <article key={node.fields.slug}>
+            <section key={node.fields.slug}>
               <Link to={node.fields.slug}>
-                {title}
+                <h4 className="post">{title}</h4>
               </Link>
-              <section>
-                <img className="post-img" src={node.frontmatter.image} alt={node.frontmatter.title}></img>
-              </section>
-            </article>
+              <Link to={node.fields.slug}>
+                <img className="post-img" title={`Click to browse images from ${title}`} src={node.frontmatter.image} alt={node.frontmatter.title}></img>
+              </Link>
+              <hr ></hr>
+            </section>
           )
         })}
       </Layout>

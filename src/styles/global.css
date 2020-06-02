@@ -1,3 +1,15 @@
 .post-img {
     width: 100%
 }
+
+h4 {
+    text-align: center;
+}
+
+a {
+    box-shadow: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

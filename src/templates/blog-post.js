@@ -24,6 +24,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} siteTitle={title} menuLinks={menuLinks}>
         <SEO title={title} image={image}/>
+        <h4>You can hover the images to read the picture titles</h4>
         <article>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr style={{ marginBottom: rhythm(1)}}/>
