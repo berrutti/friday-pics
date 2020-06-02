@@ -21,7 +21,7 @@ class About extends React.Component {
         </header>
         <section>
           <p>Hello! You are probably wondering what the hell is this site for.
-            The idea was based on <a href='http://www.bildschirmarbeiter.com'>Bildschirmarbeiter</a>, which is a german website of general humor.</p>
+            The idea was based on <a href='https://www.bildschirmarbeiter.com'>Bildschirmarbeiter</a>, which is a german website of general humor.</p>
           <p>They have a weekly picdump that I used to scroll every Friday while drinking my morning coffee at the company I used to work in.</p>
           <p>This is my version of that site. The images are pulled from Reddit, from the following subreddit list (It'll probably change in the future):</p>
           <p>
