@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Friday Pics!`,
-    author: `Matias Berrutti`,
+    author: `@matiberrutti`,
     description: `Pictures to browse on friday morning.`,
     siteUrl: `https://friday.pics/`,
     social: {
