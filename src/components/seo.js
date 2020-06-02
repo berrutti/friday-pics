@@ -26,8 +26,7 @@ function SEO({ title, image }) {
   );
 
   const metaDescription = site.siteMetadata.description;
-  const fullMeta = [
-    ...meta,
+  const meta = [
     {
       name: `description`,
       content: metaDescription,
@@ -73,7 +72,7 @@ function SEO({ title, image }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={fullMeta}
+      meta={meta}
     />
   )
 }
