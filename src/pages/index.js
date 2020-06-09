@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import "./styles.scss"
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class BlogIndex extends React.Component {
           return (
             <section key={node.fields.slug}>
               <Link to={node.fields.slug}>
-                <h4 className="post">{title}</h4>
+                <h4 className="post title">{title}</h4>
               </Link>
               <Link to={node.fields.slug}>
                 <img className="post-img" title={`Click to browse images from ${title}`} src={node.frontmatter.image} alt={node.frontmatter.title}></img>

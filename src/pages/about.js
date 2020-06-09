@@ -2,7 +2,6 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { rhythm } from '../utils/typography'
 
 class About extends React.Component {
   render() {
@@ -11,14 +10,6 @@ class About extends React.Component {
     return (
       <Layout location={this.props.location} siteTitle='About' menuLinks={menuLinks}>
         <SEO title='About' />
-        <header>
-          <h3
-            style={{
-              marginBottom: rhythm(1 / 4),
-            }}
-          >
-          </h3>
-        </header>
         <section>
           <p>Hello! You are probably wondering what the hell is this site for.
             The idea was based on <a href='https://www.bildschirmarbeiter.com'>Bildschirmarbeiter</a>, which is a german website of general humor.</p>

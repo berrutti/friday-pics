@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 const ulStyle = {
   display: `flex`,
@@ -14,21 +13,34 @@ const ulStyle = {
 };
 
 class BlogPostTemplate extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { notificationVisible: true };
+  }
+
+  handleDeleteClick = () => {
+    this.setState({ notificationVisible: false });
+  }
+
   render() {
+    debugger;
     const post = this.props.data.markdownRemark;
     const title = post.frontmatter.title;
     const image = post.frontmatter.image;
     const menuLinks = this.props.data.site.siteMetadata.menuLinks;
-    const { previous, next } = this.props.pageContext
+    const { previous, next } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} siteTitle={title} menuLinks={menuLinks}>
-        <SEO title={title} image={image}/>
-        <h4>You can hover the images to read the picture titles</h4>
-        <article>
+        <SEO title={title} image={image} />
+        {this.state.notificationVisible && <div className="notification is-info">
+          <button className="delete" onClick={this.handleDeleteClick}></button>
+          You can hover the images to read the picture titles
+          </div>}
+        <section>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr style={{ marginBottom: rhythm(1)}}/>
-        </article>
+          <hr style={{ marginBottom: 10 }} />
+        </section>
 
         <nav>
           <ul style={ulStyle}>
