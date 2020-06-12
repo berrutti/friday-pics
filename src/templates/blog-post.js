@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "../styles/global.scss"
 
 class BlogPostTemplate extends React.Component {
   render() {
