@@ -8,13 +8,12 @@ class NotFoundPage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title;
-    const menuLinks = data.site.siteMetadata.menuLinks;
 
     return (
-      <Layout location={this.props.location} siteTitle={siteTitle} menuLinks={menuLinks}>
+      <Layout location={this.props.location} siteTitle={siteTitle}>
         <SEO title='404: Not Found' />
-        <h1>Not Found</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        <h1 className="title">Not Found</h1>
+        <p>You just hit a route that doesn&#39;t exist... the sadness <span role="img" aria-label="emoji">😢</span>.</p>
       </Layout>
     )
   }
@@ -27,10 +26,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        menuLinks {
-          name
-          link
-        }
       }
     }
   }
