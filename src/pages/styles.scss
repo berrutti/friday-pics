@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import "~bulma/bulma.sass";
+
+.post-img {
+  max-height: 90vh;
+  margin: auto;
+  display: block;
+}
+
+.media-content {
+  text-align: center;
+}
+
+.card {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav .navbar-menu {
+  padding-right: 12px;
+}
+
+nav .navbar-item {
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 22px;
+}
