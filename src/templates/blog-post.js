@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import NavigateToTop from "../components/NavigateToTop"
 import SEO from "../components/seo"
 import "../styles/global.scss"
 
@@ -11,10 +12,13 @@ class BlogPostTemplate extends React.Component {
     const { title, image } = post.frontmatter;
     const { previous, next } = this.props.pageContext;
     return (
-      <Layout location={this.props.location} siteTitle={title} previous={previous} next={next}>
-        <SEO title={title} image={image} />
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Layout>
+      <>
+        <Layout location={this.props.location} siteTitle={title} previous={previous} next={next}>
+          <SEO title={title} image={image} />
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <NavigateToTop></NavigateToTop>
+        </Layout>
+      </>
     )
   }
 }
