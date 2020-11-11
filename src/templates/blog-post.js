@@ -6,22 +6,23 @@ import NavigateToTop from "../components/NavigateToTop"
 import SEO from "../components/seo"
 import "../styles/global.scss"
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark;
-    const { title, image } = post.frontmatter;
-    const { previous, next } = this.props.pageContext;
-    return (
-      <>
-        <Layout location={this.props.location} siteTitle={title} previous={previous} next={next}>
-          <SEO title={title} image={image} />
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <NavigateToTop></NavigateToTop>
-        </Layout>
-      </>
-    )
-  }
+function BlogPostTemplate(props) {
+  const { location, pageContext } = props;
+  const { frontmatter, html } = props.data.markdownRemark;
+  const { title, image } = frontmatter;
+  const { previous, next } = pageContext;
+
+  return (
+    <>
+      <Layout location={location} siteTitle={title} previous={previous} next={next}>
+        <SEO title={title} image={image} />
+        <section dangerouslySetInnerHTML={{ __html: html }} />
+        <NavigateToTop></NavigateToTop>
+      </Layout>
+    </>
+  )
 }
+
 
 export default BlogPostTemplate
 

@@ -59,3 +59,9 @@ nav .navbar-item {
   opacity: 1;
   transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
 }
+
+.is-navigation {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
